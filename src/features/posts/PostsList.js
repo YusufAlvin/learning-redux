@@ -10,9 +10,9 @@ export const PostsList = () => {
   const posts = useSelector((state) => state.posts)
 
   // Sort posts in reverse chronological order by datetime string
-  const orderedPosts = posts
-    .slice()
-    .sort((a, b) => b.date.localeCompare(a.date))
+  const orderedPosts = posts.slice().sort((a, b) => {
+    return b.date.localeCompare(a.date)
+  })
 
   const renderedPosts = orderedPosts.map((post) => {
     return (
